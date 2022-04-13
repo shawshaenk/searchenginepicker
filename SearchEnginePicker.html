@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine Picker</title>
+    <link rel="shortcut icon" href="search.ico" type="image/x-icon">  
+    <link rel="stylesheet" type="text/css" href="Dark.css" id="aesthetic"/>
+    <script src="Search.js"></script>
+</head>
+
+<body onbeforeunload='document.getElementById("searchengine").selectedIndex = 0;'>
+    <div style="padding-bottom: 25px; display: flex; justify-content: center;">
+        <select id="modechanger" onclick="changeMode()">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+        </select>
+    </div>
+
+    <a href="https://www.google.com/" target="_blank" id="searchlink" style="display: flex; justify-content: center;">
+        <img id="logo" style="padding-bottom: 25px;" src="googlelogo.png">
+    </a>
+
+    <div class="main" style="padding-bottom: 25px; display: flex; justify-content: center;">
+        <select id="searchengine" onclick="changeImage()">
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="duck">DuckDuckGo</option>
+        </select>
+    </div>
+
+    <div style="padding-bottom: 25px; display: flex; justify-content: center;">
+        <button type="button" onclick="search()" class="searchbtn" style="border: radius 25px;">🔎</button>
+        <input id="searchbox" type="text" placeholder="Search the Web">
+        <button type="button" onclick="document.getElementById('searchbox').value = ''" class="clearbtn">❌</button>
+    </div>
+
+    <script>
+        var wage = document.getElementById("searchbox");
+        wage.addEventListener("keydown", function (e) {
+            if (e.code == "Enter") {
+                search();
+            }
+        })
+    </script>
+
+    <div>
+        <p id="searchsummary">Google Search (also known simply as Google), is a search engine provided by Google. Handling more than 3.5 billion searches per day, it has a 92% share of the global search engine market. It is also the most-visited website in the world.</p>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <a href="https://en.wikipedia.org/wiki/Google_Search" target="_blank" id="wikilink">
+            <img src="wikipedialogo.png">
+        </a>
+    </div>
+</body>
+</html>
